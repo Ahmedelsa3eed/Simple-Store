@@ -1,0 +1,53 @@
+<form #form="ngForm" (ngSubmit)="submitForm()">
+    <p>SHIPPING</p>
+
+    <label for="name">FULL NAME</label>
+    <input 
+        name="name"
+        type="text" 
+        id="name" 
+        required  
+        minlength="3" 
+        maxlength="32"
+        placeholder="Enter you full name" 
+        [(ngModel)]="customer.name">
+
+    <label for="address">ADDRESS</label>
+    <input 
+        name="address"
+        type="text" 
+        id="address" 
+        required  
+        minlength="6" 
+        maxlength="64"
+        placeholder="Enter your address" 
+        [(ngModel)]="customer.address">
+
+    <label for="credit">CREDIT CARD NUMBER</label>
+    <input 
+        name="credit"
+        type="password" 
+        id="credit" 
+        required  
+        minlength="6" 
+        maxlength="10"
+        placeholder="Enter your credit card number" 
+        [(ngModel)]="customer.creditCard"
+        #creditCard="ngModel">
+
+    <button type="submit" [disabled]="form.invalid" class="checkout-btn">
+        CHECKOUT
+    </button>
+</form>
+
+<div *ngIf="creditCard.invalid && creditCard.dirty">
+    <div *ngIf="creditCard.errors?.['required']">
+        Please provide the credit card number.
+    </div>
+    <div *ngIf="creditCard.errors?.['minlength']">
+        The credit card must contain at least 6 characters.
+    </div>
+    <div *ngIf="creditCard.errors?.['maxlength']">
+        The credit card must contain at most 10 characters.
+    </div>
+</div>

@@ -66,42 +66,7 @@
                     <div class="col text-right">&euro; {{ totalPrice }}</div>
                 </div>
 
-                <form #form="ngForm" (ngSubmit)="submitForm()">
-                    <p>SHIPPING</p>
-
-                    <label for="name">FULL NAME</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        required 
-                        minlength="3" 
-                        maxlength="32"  
-                        placeholder="Enter you full name">
-                    
-                    <label for="address">ADDRESS</label>
-                    <input 
-                        type="text" 
-                        id="address" 
-                        required 
-                        minlength="3" 
-                        maxlength="64"
-                        placeholder="Enter your address">
-
-                    <label for="credit">CREDIT CARD NUMBER</label>
-                    <input 
-                        type="password"
-                        id="credit"
-                        required 
-                        minlength="6" 
-                        maxlength="8" 
-                        placeholder="Enter your credit card number">
-                    
-                    <input 
-                        type="submit" 
-                        [disabled]="form.invalid" 
-                        value="CHECKOUT" 
-                        class="checkout-btn">
-                </form>
+                <app-form></app-form>
 
                 <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                     <div class="col">TOTAL PRICE</div>
