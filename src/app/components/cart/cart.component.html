@@ -47,8 +47,13 @@
                 <div class="row border-top border-bottom">
                     <app-cart-item
                         class="row main align-items-center"
-                        *ngFor="let cartItem of cartItems" [cartItem]="cartItem">
+                        *ngFor="let cartItem of cartItems" [cartItem]="cartItem" (deleteItem)="updateTotalPrice()">
                     </app-cart-item>
+                </div>
+
+                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                    <div class="col">TOTAL PRICE</div>
+                    <div class="col text-right">&euro; {{totalPrice}}</div>
                 </div>
 
                 <div class="back-to-shop">
@@ -67,11 +72,6 @@
                 </div>
 
                 <app-form></app-form>
-
-                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                    <div class="col">TOTAL PRICE</div>
-                    <div class="col text-right">&euro; {{totalPrice}}</div>
-                </div>
 
             </div>
         </div>

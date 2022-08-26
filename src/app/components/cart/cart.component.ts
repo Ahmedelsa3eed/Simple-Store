@@ -27,4 +27,8 @@ export class CartComponent implements OnInit {
     this.cartItems.push(product)
   }
 
+  updateTotalPrice(): void {
+    this.totalPrice = this.cartService.calculateTotalPrice();
+  }
+
 }

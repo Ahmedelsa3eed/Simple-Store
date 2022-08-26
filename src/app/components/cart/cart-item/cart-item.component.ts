@@ -1,5 +1,5 @@
 import { CartService } from './../../../services/cart.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { Product } from 'src/app/models/Product';
 
 @Component({
@@ -12,6 +12,9 @@ export class CartItemComponent implements OnInit {
   @Input()
   cartItem: Product = new Product;
 
+  @Output()
+  deleteItem = new EventEmitter<any>();
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -19,6 +22,7 @@ export class CartItemComponent implements OnInit {
 
   deleteFromCart(): void {
     this.cartService.deleteFromCart(this.cartItem);
+    this.deleteItem.emit();
   }
 
 }
