@@ -6,7 +6,7 @@ export class Customer {
 
     constructor() {
         this.name = '';
-        this.address = 'Enter your address';
+        this.address = '';
         this.creditCard = '';
         this.totalPrice = 0;
     }

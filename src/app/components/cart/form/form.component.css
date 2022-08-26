@@ -39,3 +39,10 @@ input:focus::-webkit-input-placeholder {
 .checkout-btn:hover {
     color: white;
 }
+
+.error-msg {
+    background-color: #ffa2a2;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 400;
+}

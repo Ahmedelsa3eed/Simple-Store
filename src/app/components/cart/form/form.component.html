@@ -7,10 +7,11 @@
         type="text" 
         id="name" 
         required  
-        minlength="3" 
-        maxlength="32"
+        minlength="6" 
+        maxlength="64"
         placeholder="Enter you full name" 
-        [(ngModel)]="customer.name">
+        [(ngModel)]="customer.name"
+        #fullName="ngModel">
 
     <label for="address">ADDRESS</label>
     <input 
@@ -21,7 +22,8 @@
         minlength="6" 
         maxlength="64"
         placeholder="Enter your address" 
-        [(ngModel)]="customer.address">
+        [(ngModel)]="customer.address"
+        #address="ngModel">
 
     <label for="credit">CREDIT CARD NUMBER</label>
     <input 
@@ -40,7 +42,31 @@
     </button>
 </form>
 
-<div *ngIf="creditCard.invalid && creditCard.dirty">
+<div class="error-msg" *ngIf="fullName.invalid && fullName.dirty">
+    <div *ngIf="fullName.errors?.['required']">
+        Please provide a valid full name.
+    </div>
+    <div *ngIf="fullName.errors?.['minlength']">
+        The full name must contain at least 6 characters.
+    </div>
+    <div *ngIf="fullName.errors?.['maxlength']">
+        The full name must contain at most 64 characters.
+    </div>
+</div>
+
+<div class="error-msg" *ngIf="address.invalid && address.dirty">
+    <div *ngIf="address.errors?.['required']">
+        Please provide an address.
+    </div>
+    <div *ngIf="address.errors?.['minlength']">
+        The address must contain at least 6 characters.
+    </div>
+    <div *ngIf="address.errors?.['maxlength']">
+        The address must contain at most 64 characters.
+    </div>
+</div>
+
+<div class="error-msg" *ngIf="creditCard.invalid && creditCard.dirty">
     <div *ngIf="creditCard.errors?.['required']">
         Please provide the credit card number.
     </div>
