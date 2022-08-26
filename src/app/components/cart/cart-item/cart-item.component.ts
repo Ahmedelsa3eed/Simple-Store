@@ -23,6 +23,7 @@ export class CartItemComponent implements OnInit {
   deleteFromCart(): void {
     this.cartService.deleteFromCart(this.cartItem);
     this.deleteItem.emit();
+    window.alert(`${this.cartItem.name} was deleted successfully!`);
   }
 
 }

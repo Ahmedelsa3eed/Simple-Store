@@ -17,7 +17,13 @@ export class CartService {
   }
 
   addToCart(product: Product) {
-    this.cartItems.push(product);
+    const index = this.cartItems.indexOf(product)
+    if(index === -1) {
+      this.cartItems.push(product);
+    }
+    else {
+      this.cartItems[index].amount++;
+    }
     this.productSource.next(this.cartItems);
   }
 
