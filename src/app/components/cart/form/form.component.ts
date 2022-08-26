@@ -1,8 +1,8 @@
-import { CartService } from './../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Customer } from '../models/Customer';
-import { ConfirmationService } from '../services/confirmation.service';
+import { Customer } from 'src/app/models/Customer';
+import { CartService } from 'src/app/services/cart.service';
+import { ConfirmationService } from 'src/app/services/confirmation.service';
 
 @Component({
   selector: 'app-form',

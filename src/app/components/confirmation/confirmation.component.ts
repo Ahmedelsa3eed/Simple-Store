@@ -1,5 +1,5 @@
-import { Customer } from './../models/Customer';
-import { ConfirmationService } from './../services/confirmation.service';
+import { Customer } from '../../models/Customer';
+import { ConfirmationService } from '../../services/confirmation.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

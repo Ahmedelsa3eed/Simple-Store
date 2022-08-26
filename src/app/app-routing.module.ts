@@ -1,5 +1,5 @@
-import { ConfirmationComponent } from './confirmation/confirmation.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NgModule } from '@angular/core';
