@@ -21,6 +21,14 @@ export class CartService {
     this.productSource.next(this.cartItems);
   }
 
+  deleteFromCart(product: Product) {
+    this.cartItems.map((p, index) => {
+      if(product.id === p.id) {
+        this.cartItems.splice(index, 1);
+      }
+    })
+  }
+
   calculateTotalPrice(): number {
     let totalPrice = 0;
     this.cartItems.forEach(p => {

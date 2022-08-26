@@ -11,4 +11,6 @@
     <input type="number" id="amount" name="amount" max="10" min="1" [(ngModel)]="cartItem.amount">
 </div>
 
-<div class="col">&euro; {{ cartItem.price }} <span class="close">&#10005;</span></div>
+<div class="col">&euro; {{ cartItem.price }} 
+    <i class="close fa fa-trash" aria-hidden="true" (click)="deleteFromCart()"></i>
+</div>
