@@ -47,7 +47,10 @@
                 <div class="row border-top border-bottom">
                     <app-cart-item
                         class="row main align-items-center"
-                        *ngFor="let cartItem of cartItems" [cartItem]="cartItem" (deleteItem)="updateTotalPrice()">
+                        *ngFor="let cartItem of cartItems" 
+                            [cartItem]="cartItem" 
+                            (deleteItem)="updateTotalPrice()"
+                            (updateTotalPrice)="updateTotalPrice()">
                     </app-cart-item>
                 </div>
 

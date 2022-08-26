@@ -15,6 +15,9 @@ export class CartItemComponent implements OnInit {
   @Output()
   deleteItem = new EventEmitter<any>();
 
+  @Output()
+  updateTotalPrice = new EventEmitter<any>();
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -26,4 +29,7 @@ export class CartItemComponent implements OnInit {
     window.alert(`${this.cartItem.name} was deleted successfully!`);
   }
 
+  updateTotalPricePrice(): void {
+    this.updateTotalPrice.emit();
+  }
 }

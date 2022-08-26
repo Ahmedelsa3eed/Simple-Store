@@ -27,4 +27,5 @@ export class FormComponent implements OnInit {
     this.confirmationService.setCustomer(this.customer);
     this.router.navigateByUrl('/confirmation');
   }
+
 }

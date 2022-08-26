@@ -28,11 +28,12 @@
     <label for="credit">CREDIT CARD NUMBER</label>
     <input 
         name="credit"
-        type="password" 
+        type="text" 
         id="credit" 
         required  
         minlength="6" 
-        maxlength="10"
+        maxlength="15"
+        pattern="^[0-9]*$"
         placeholder="Enter your credit card number" 
         [(ngModel)]="customer.creditCard"
         #creditCard="ngModel">
@@ -74,6 +75,9 @@
         The credit card must contain at least 6 characters.
     </div>
     <div *ngIf="creditCard.errors?.['maxlength']">
-        The credit card must contain at most 10 characters.
+        The credit card must contain at most 15 characters.
+    </div>
+    <div *ngIf="creditCard.errors?.['pattern']">
+        The credit card must contain numbers only.
     </div>
 </div>

@@ -8,7 +8,7 @@
 </div>
 
 <div class="col">
-    <input type="number" id="amount" name="amount" max="10" min="1" [(ngModel)]="cartItem.amount">
+    <input type="number" id="amount" name="amount" max="10" min="1" [(ngModel)]="cartItem.amount" (ngModelChange)="updateTotalPricePrice()">
 </div>
 
 <div class="col">&euro; {{ cartItem.price }} 
