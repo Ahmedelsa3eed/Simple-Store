@@ -1,5 +1,5 @@
 # MyStore Project Overview
-
+[![GitHub Super-Linter](https://github.com/Ahmedelsa3eed/Simple-Store/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 MyStore is Angular application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process.
 
 ## Development server
